@@ -7,9 +7,7 @@ import { globalStyles } from '../styles/global';
 export default function Settings () {
   return (
     <View style={globalStyles.container}>
-      <Text>
-          Settings
-      </Text>
+      <Text>Settings</Text>
     </View>
   )
 }

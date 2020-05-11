@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, StyleSheet, Modal } from 'react-native';
+import { MaterialIcons } from '@expo/vector-icons';
 
 import { globalStyles } from '../styles/global';
+import Card from '../shared/Card';
 
 export default function Home ({navigation}) {
+  const [modalOpen, setModalOpen] = useState(false);
   const [reviews, setReview] = useState([
     { title: 'Life', rating: 4, body: 'Lorem Ipsum', key: '1' },
     { title: 'The Irishman', rating: 4.3, body: 'Lorem Ipsum', key: '2' },
@@ -16,14 +19,37 @@ export default function Home ({navigation}) {
   }
   return (
     <View style={ globalStyles.container }>
+      <Modal visible={modalOpen} animationType='slide'>
+        
+        <View style={styles.modalContent}>
+          <MaterialIcons name='add'
+            size={24}
+            onPress={() => setModalOpen(true)}
+          />
+          <Text>Hello World!!!</Text>
+        </View>
+      </Modal>
+
+      <MaterialIcons name='add'
+        size={24}
+        onPress={() => setModalOpen(true)}
+      />
       <FlatList
         data = { reviews }
         renderItem = { ({ item }) => (
           <TouchableOpacity onPress={ () => clickHandler(item)}>
-            <Text style={globalStyles.textTitle}>{ item.title }</Text>
+            <Card>
+              <Text style={globalStyles.textTitle}>{ item.title }</Text>    
+            </Card>
           </TouchableOpacity>
         )}
       />
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+    modalContent: {
+
+    }
+})

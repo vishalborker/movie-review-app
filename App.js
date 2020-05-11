@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 
-import AppNavigator from './Routes/drawer';
+import AppNavigator from './routes/drawer';
 
 const getFonts = () => Font.loadAsync({
   'opensans-regular': require('./assets/fonts/OpenSans-Regular.ttf'),

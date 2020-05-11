@@ -2,18 +2,17 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 
-export default function Header ({navigation}) {
+export default function Header ({navigation, headerText}) {
  
   const openMenu = () => {
-    console.log('here');
-    navigation.openDrawer();
+    navigation.openDrawer(); 
   }
 
   return (
     <View style={styles.header}>
       <MaterialIcons name='menu' size={28} style={styles.icon} onPress={openMenu} />
       <View >
-        <Text style={styles.headerText}>Movies</Text>
+        <Text style={styles.headerText}>{headerText}</Text>
       </View>
     </View>
   )
@@ -32,10 +31,9 @@ const styles = StyleSheet.create({
       color: '#fff',
       fontSize: 20,
       letterSpacing: 1,
-      marginLeft: 60
+      marginLeft: 20
    },
    icon: {
-      position: 'absolute',
       left: 10
    }
 })

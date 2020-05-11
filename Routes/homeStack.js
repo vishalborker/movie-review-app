@@ -9,9 +9,8 @@ const screens = {
   Home: {
     screen: Home,
     navigationOptions: ({navigation}) => {
-      console.log({navigation})
       return { 
-        headerTitle: () => <Header navigation={navigation}/>
+        headerTitle: () => <Header navigation={navigation} headerText='Movies' />
       }
     }
   },
