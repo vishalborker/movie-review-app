@@ -1,32 +1,17 @@
 import React from 'react';
-import { View, Button, TextInput, Text} from 'react-native';
+import { View, TextInput, Text} from 'react-native';
 import { Formik } from 'formik';
-import * as yup from 'yup';
 
 import { globalStyles } from '../styles/global';
 import FlatButton from '../shared/Button';
+import reviewSchema from '../schemas/reviewSchema';
 
-const reviewSchema = yup.object({
-    title: yup.string()
-      .required()
-      .min(4),
-    body: yup.string()
-      .required()
-      .min(8),
-    rating: yup.string()
-      .required()
-      .test('is-rating-1-5', 'Rating must be between 1-5', (val) => {
-        return parseInt(val) <6 && parseInt(val) > 0
-      })
-})
-
-export default function ReviewForm ({ navigation, onSubmit }) {
+export default function ReviewForm ({ onSubmit }) {
     return (
       <View style={ globalStyles.container }>
          <Formik
             initialValues={{title: '', rating: '', body: ''}}
             onSubmit={(values, actions) => {
-              console.log(values);
               actions.resetForm();
               onSubmit(values);
             }}
