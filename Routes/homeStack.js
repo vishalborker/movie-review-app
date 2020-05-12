@@ -9,9 +9,8 @@ const screens = {
   Home: {
     screen: Home,
     navigationOptions: ({navigation}) => {
-      console.log({navigation})
       return { 
-        headerTitle: () => <Header navigation={navigation}/>
+        headerTitle: () => <Header navigation={navigation} headerText='Movies' />
       }
     }
   },
@@ -28,7 +27,7 @@ const HomeStack = createStackNavigator(screens, {
       headerTintColor: '#fff',
       headerStyle: {
         backgroundColor: 'coral',
-        height: 60
+        height: 80
       }
     }
 });
