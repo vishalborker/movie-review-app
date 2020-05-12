@@ -1,5 +1,5 @@
-import React from 'react';
-import { createStackNavigator } from 'react-navigation-stack';
+import React from './node_modules/react';
+import { createStackNavigator } from './node_modules/react-navigation-stack';
 
 import Home from '../screens/Home';
 import ReviewDetails from '../screens/ReviewDetails';

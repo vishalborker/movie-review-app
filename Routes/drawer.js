@@ -1,5 +1,5 @@
-import { createDrawerNavigator } from 'react-navigation-drawer';
-import { createAppContainer } from 'react-navigation';
+import { createDrawerNavigator } from './node_modules/react-navigation-drawer';
+import { createAppContainer } from './node_modules/react-navigation';
 
 import HomeStack from './homeStack';
 import SettingsStack from './settingsStack';
