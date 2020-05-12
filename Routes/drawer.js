@@ -11,6 +11,6 @@ const RootDrawerNavigator = createDrawerNavigator({
   Settings: {
     screen: SettingsStack
   }
-});
+}); 
 
 export default createAppContainer(RootDrawerNavigator);
